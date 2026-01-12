@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ระบบประวัติผู้ป่วย (Blockchain)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-4">
+  <div class="card shadow p-4">
+    <h3 class="text-center mb-4">🏥 ระบบประวัติผู้ป่วยด้วย Blockchain</h3>
+
+    <!-- บันทึกผู้ป่วย -->
+    <h5>📝 บันทึกข้อมูลผู้ป่วย</h5>
+    <div class="row g-2 mb-3">
+      <div class="col-md-3"><input id="pId" class="form-control" placeholder="รหัสผู้ป่วย"></div>
+      <div class="col-md-5"><input id="pName" class="form-control" placeholder="ชื่อผู้ป่วย"></div>
+      <div class="col-md-2"><input id="pAge" class="form-control" placeholder="อายุ"></div>
+      <div class="col-md-2 d-grid">
+        <button class="btn btn-primary" onclick="setPatient()">บันทึก</button>
+      </div>
+    </div>
+
+    <!-- โรคประจำตัว -->
+    <h5>🦠 เพิ่มโรคประจำตัว</h5>
+    <div class="row g-2 mb-3">
+      <div class="col-md-5"><input id="cId" class="form-control" placeholder="รหัสผู้ป่วย"></div>
+      <div class="col-md-5"><input id="cName" class="form-control" placeholder="ชื่อโรคประจำตัว"></div>
+      <div class="col-md-2 d-grid">
+        <button class="btn btn-warning" onclick="addChronic()">เพิ่มโรค</button>
+      </div>
+    </div>
+
+    <h5>🤒 เพิ่มโรคชั่วคราว</h5>
+<div class="row g-2 mb-3">
+  <div class="col-md-5">
+    <input id="tId" class="form-control" placeholder="รหัสผู้ป่วย">
+  </div>
+  <div class="col-md-5">
+    <input id="tName" class="form-control" placeholder="ชื่อโรคชั่วคราว">
+  </div>
+  <div class="col-md-2 d-grid">
+    <button class="btn btn-secondary" onclick="addTemporary()">เพิ่มโรคชั่วคราว</button>
+  </div>
+</div>
+
+
+    <!-- ดูข้อมูล -->
+    <h5>🔍 ดูข้อมูลผู้ป่วย</h5>
+    <div class="row g-2 mb-3">
+      <div class="col-md-8"><input id="gId" class="form-control" placeholder="รหัสผู้ป่วย"></div>
+      <div class="col-md-4 d-grid">
+        <button class="btn btn-success" onclick="getPatient()">ดึงข้อมูล</button>
+      </div>
+    </div>
+
+    <pre class="alert alert-info" id="result">ผลลัพธ์จะแสดงตรงนี้</pre>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
